@@ -1,12 +1,12 @@
 # REDUX :
 
-**ACTION CREATOR: function return an action object with type and (optional) payload**
-**produces and returns an action**
-**gets fed to dispatch**
-**forwards to middleware(this gets added with thunk(axios to work with async))(we can have manny)**
-**//sends action to all reducers**
-**creates new state**
-**//waits till we to update the state**
+- **ACTION CREATOR: function return an action object with type and (optional) payload**
+- **produces and returns an action**
+- **gets fed to dispatch**
+- **forwards to middleware(this gets added with thunk(axios to work with async))(we can have manny)**
+- **//sends action to all reducers**
+- **creates new state**
+- **//waits till we to update the state**
 
 # Middleware is a function that gets called when an action is dispatched
 - middleware lets you wrap the store's dispatch method
@@ -67,3 +67,6 @@ or
        **other wise just return the selectedSong no action needed** 
          return selectedSong;
        };`
+
+
+  
