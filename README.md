@@ -4,9 +4,9 @@
 - **produces and returns an action**
 - **gets fed to dispatch**
 - **forwards to middleware(this gets added with thunk(axios to work with async))(we can have manny)**
-- **//sends action to all reducers**
+- **sends action to all reducers**
 - **creates new state**
-- **//waits till we to update the state**
+- **waits till we to update the state**
 
 # Middleware is a function that gets called when an action is dispatched
 - middleware lets you wrap the store's dispatch method
