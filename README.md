@@ -29,11 +29,11 @@ or
 - async await gets transformed into es2015 syntax
 
       export const fetchPosts = async () => {
-      const res = await JSONPlaceholder.get("/posts");
-      return {
-      type: 'FETCH_POSTS'
-      payload: res
-      };
+        const res = await JSONPlaceholder.get("/posts");
+        return {
+          type: 'FETCH_POSTS'
+          payload: res
+        };
       }
 
 //no async promise and action redux to fast to wait for promise to return --use the thunk middleware
