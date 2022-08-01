@@ -54,20 +54,20 @@ or
 - (misleading i guess--conner case: you can `https://github.com/reduxjs/redux/blob/master/src/combineReducers.ts` bottom code runs reducer read code)
   (mutate):
 
-- const numbers = [1,2,3]
-- numbers === numbers //true
-- numbers === [1,2,3] //false //when not primitive js check if its the same in  memory
-- this is a reducer code (always return brand new arays and objects!!)
+      const numbers = [1,2,3]
+      numbers === numbers //true
+      numbers === [1,2,3] //false //when not primitive js check if its the same in  memory
+- **this is a reducer code (always return brand new arays and objects!!)**
 - **two arguments the same order ALWAYS exiciting that belongs to this part of** **the state(department)**
 - **the old data and the action or form of data that is being sent to the reducer**
 
           const selectedSongReducer = (selectedSong = null, action) => {
-          //if the action type is SONG_SELECTED then return the payload of the action  
-          if (action.type === 'SONG_SELECTED') {
-          return action.payload;
-          } 
-          //other wise just return the selectedSong no action needed 
-          return selectedSong;
+              //if the action type is SONG_SELECTED then return the payload of the action  
+            if (action.type === 'SONG_SELECTED') {
+              return action.payload;
+            } 
+              //other wise just return the selectedSong no action needed 
+            return selectedSong;
           };`
 
 
