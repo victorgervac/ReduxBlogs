@@ -6,15 +6,15 @@
 - **forwards to middleware(this gets added with thunk(axios to work with async))(we can have manny)**
 - **sends action to all reducers**
 - **creates new state**
-- **waits till we to update the state**
+- **waits till we update the state**
 
-# Middleware is a function that gets called when an action is dispatched
+### Middleware is a function that gets called when an action is dispatched
 - middleware lets you wrap the store's dispatch method
 - stop or modify the action before it gets to the reducer
 - middleware is to support asynchronous actions
 - `https://redux.js.org/api/applymiddleware`
 
-# THUNK(helps with axios):{takes "something" function?  dispatch and getState: nothing pass to reducers  }
+### THUNK(helps with axios):{takes "something" function?  dispatch and getState: nothing pass to reducers  }
 - redux-thunk lets the action creators invert control by dispatching functions
 - receive dispatch as an argument and may call it asynchronously
 - handdle action creators but not primary job
@@ -23,10 +23,12 @@ or
 - actions creators can return functions 
 - if an objects gets returned it must have a type(payload optional)
 
-# ACTION creators must return plain javascript objects with a type property we are not 
+### ACTION creators must return plain javascript objects with a type property 
 - by the time our actions gets to a reducer we wont have fetched our data
 - es2015 syntax for destructuring
 - async await gets transformed into es2015 syntax
+
+- **bad syntax**
 
       export const fetchPosts = async () => {
         const res = await JSONPlaceholder.get("/posts");
@@ -40,7 +42,17 @@ or
 - asynchronous action creators take some amount of  time for to get its data ready to go
 - a function that returns a async function(set up in app.js)
 
-# REDUCER watching actions with type fetch post and get data
+- **good stuff**
+
+      export const fetchPosts = () => async dispatch => {
+        //dummy (()=>()) //when intiall setup to not get error
+        const response = await jsonPlaceholder.get('/posts');
+
+        dispatch({ type: 'FETCH_POSTS', payload: response.data });
+      };
+
+
+### REDUCER watching actions with type fetch post and get data
 
 - import here create indivudual 
 - each reducer gets called one time on open app
@@ -70,5 +82,10 @@ or
             return selectedSong;
           };`
 
+### Redux DevTools
+- `https://github.com/reduxjs/redux-devtools`
+- [UdemySetupDev](https://www.udemy.com/course/react-redux/learn/lecture/12700653#content)
+- hhtp:localhost:3000/debug_session = $<session_logged_in>
 
-  
+      const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+      const store = createStore(reducers,composeEnhancers(applyMiddleware(thunk)));
