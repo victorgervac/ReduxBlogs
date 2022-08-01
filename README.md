@@ -60,6 +60,7 @@ or
 - this is a reducer code (always return brand new arays and objects!!)
 - **two arguments the same order ALWAYS exiciting that belongs to this part of** **the state(department)**
 - **the old data and the action or form of data that is being sent to the reducer**
+
           const selectedSongReducer = (selectedSong = null, action) => {
           //if the action type is SONG_SELECTED then return the payload of the action  
           if (action.type === 'SONG_SELECTED') {
