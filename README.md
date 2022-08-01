@@ -24,9 +24,9 @@ or
 - if an objects gets returned it must have a type(payload optional)
 
 # ACTION creators must return plain javascript objects with a type property we are not 
-//by the time our actions gets to a reducer we wont have fetched our data
-//es2015 syntax for destructuring
-//async await gets transformed into es2015 syntax
+- by the time our actions gets to a reducer we wont have fetched our data
+- es2015 syntax for destructuring
+- async await gets transformed into es2015 syntax
 
   - export const fetchPosts = async () => {
   -   const res = await JSONPlaceholder.get("/posts");
