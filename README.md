@@ -28,13 +28,13 @@ or
 - es2015 syntax for destructuring
 - async await gets transformed into es2015 syntax
 
-  -     export const fetchPosts = async () => {
-  -     const res = await JSONPlaceholder.get("/posts");
-  -     return {
-  -     type: 'FETCH_POSTS'
-  -     payload: res
-  -     };
-  -     }
+      export const fetchPosts = async () => {
+      const res = await JSONPlaceholder.get("/posts");
+      return {
+      type: 'FETCH_POSTS'
+      payload: res
+      };
+      }
 
 //no async promise and action redux to fast to wait for promise to return --use the thunk middleware
 //asynchronous action creators take some amount of  time for to get its data ready to go
