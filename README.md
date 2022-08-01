@@ -36,36 +36,38 @@ or
         };
       }
 
-//no async promise and action redux to fast to wait for promise to return --use the thunk middleware
-//asynchronous action creators take some amount of  time for to get its data ready to go
-//a function that returns a async function(set up in app.js)
+- no async promise and action redux to fast to wait for promise to return --use the thunk middleware
+- asynchronous action creators take some amount of  time for to get its data ready to go
+- a function that returns a async function(set up in app.js)
 
 # REDUCER watching actions with type fetch post and get data
-// import here create indivudual 
-//each reducer gets called one time on open app
-//must return any value but never undefined  
-// produce state or data that to be used inside of your app using only previous state and the action
-//must not return reach out of itself to decide what value to return 
-//keep reducer pure!!
-  //bad return axios.get('/posts')
-  //good state + action 
-//must NOT! mutate its input state argument 
- (misleading i guess--conner case: you can `https://github.com/reduxjs/redux/blob/master/src/combineReducers.ts` bottom code runs reducer read code)
+
+- import here create indivudual 
+- each reducer gets called one time on open app
+- must return any value but never undefined  
+- produce state or data that to be used inside of your app using only previous state and the action
+- must not return reach out of itself to decide what value to return 
+- keep reducer pure!!
+      //bad return axios.get('/posts')
+      //good state + action 
+      //must NOT! mutate its input state argument 
+- (misleading i guess--conner case: you can `https://github.com/reduxjs/redux/blob/master/src/combineReducers.ts` bottom code runs reducer read code)
   (mutate):
-      - const numbers = [1,2,3]
-      - numbers === numbers //true
-      - numbers === [1,2,3] //false //when not primitive js check if its the same in - memory
- - this is a reducer code (always return brand new arays and objects!!)
-      - **two arguments the same order ALWAYS exiciting that belongs to this part of** **the state(department)**
-      - **the old data and the action or form of data that is being sent to the reducer**
-       - const selectedSongReducer = (selectedSong = null, action) => {
-       - **if the action type is SONG_SELECTED then return the payload of the action** 
-       -  if (action.type === 'SONG_SELECTED') {
-       -    return action.payload;
-       -    } 
-       - **other wise just return the selectedSong no action needed** 
-       - return selectedSong;
-       - };`
+
+- const numbers = [1,2,3]
+- numbers === numbers //true
+- numbers === [1,2,3] //false //when not primitive js check if its the same in  memory
+- this is a reducer code (always return brand new arays and objects!!)
+- **two arguments the same order ALWAYS exiciting that belongs to this part of** **the state(department)**
+- **the old data and the action or form of data that is being sent to the reducer**
+          const selectedSongReducer = (selectedSong = null, action) => {
+          //if the action type is SONG_SELECTED then return the payload of the action  
+          if (action.type === 'SONG_SELECTED') {
+          return action.payload;
+          } 
+          //other wise just return the selectedSong no action needed 
+          return selectedSong;
+          };`
 
 
   
